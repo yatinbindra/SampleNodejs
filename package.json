@@ -1,11 +1,12 @@
 {
-    "name": "nodejs-app-amit",
-    "version": "0.1",
+    "name": "nodejs-yatin",
+    "version": "0.0.1",
     "description": "This is sample NodeJS Application",
     "main": "app.js",
     "scripts": {
       "test": "echo \"Error: no test specified\" && exit 1",
-      "start": "node app.js"
+      "start": "node app.js",
+      "build": "node app.js"
     },
     "repository": {
       "type": "git",
