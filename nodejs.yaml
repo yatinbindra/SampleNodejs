@@ -1,0 +1,33 @@
+- name: My first play
+  hosts: myhosts
+  tasks:
+  - name: Ping my hosts
+    ansible.builtin.ping:
+
+  - name: Create Directory
+    ansible.builtin.file:
+      path: /www
+      state: directory
+      mode: '0755' 
+  - name: Install nodejs and npm 
+    apt:
+      pkg:
+        - nodejs
+        - npm
+
+  - name: Copy the Artifacts
+    ansible.builtin.copy:
+      src: /home/jenkins/agent/workspace/build_task_yatin/nodejs-yatin1-0.0.3.tgz
+      dest: /www
+  # - name: Unarchive the Artifacts
+  #   ansible.builtin.unarchive:
+  #     src: /home/xs398-yatbin/www/nodejs-yatin1-0.0.3.tgz
+  #     dest: /home/xs398-yatbin/www
+  #     remote_src: yes
+  - name: Running nodejs
+    ansible.builtin.shell: |
+      pwd &&
+      ls
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Hello world
