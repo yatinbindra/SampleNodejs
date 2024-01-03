@@ -1,2 +1,2 @@
 [myhosts]
-10.0.0.77 ansible_user=yatin ansible_private_key_file=/home/jenkins/agent/workspace/build_yask_yatin/VM-key.pem
+10.0.0.77 ansible_user=yatin ansible_private_key_file=/home/jenkins/agent/workspace/build_task_yatin/VM-key.pem
