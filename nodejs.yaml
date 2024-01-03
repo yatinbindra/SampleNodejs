@@ -1,12 +1,13 @@
 - name: My first play
   hosts: myhosts
+  become: yes
+  become_user: root
   tasks:
-  - name: Ping my hosts
-    ansible.builtin.ping:
+ 
 
   - name: Create Directory
     ansible.builtin.file:
-      path: /www
+      path: /home/yatin/www
       state: directory
       mode: '0755' 
   - name: Install nodejs and npm 
@@ -17,8 +18,14 @@
 
   - name: Copy the Artifacts
     ansible.builtin.copy:
-      src: /home/jenkins/agent/workspace/build_task_yatin/nodejs-yatin1-0.0.3.tgz
-      dest: /www
+      src: /home/jenkins/agent/workspace/build_task_yatin/nodejs-yatin1-0.0.4.tgz
+      dest: /home/yatin/www
+  - name: Unarchive the Artifacts
+    ansible.builtin.unarchive:
+      src: /home/yatin/www/nodejs-yatin1-0.0.4.tgz
+      dest: /home/yatin/www
+      remote_src: yes
+
   - name: Running nodejs
     ansible.builtin.shell: |
       pwd &&
