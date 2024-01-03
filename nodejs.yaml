@@ -1,13 +1,13 @@
 - name: My first play
   hosts: myhosts
   become: yes
-  become_user: root
+ 
   tasks:
  
 
   - name: Create Directory
     ansible.builtin.file:
-      path: /home/yatin/www
+      path: /home/yatin/www1
       state: directory
       mode: '0755' 
   - name: Install nodejs and npm 
