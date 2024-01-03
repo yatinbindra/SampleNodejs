@@ -26,10 +26,7 @@
       dest: /home/yatin/www
       remote_src: yes
 
-  - name: Running nodejs
-    ansible.builtin.shell: |
-      pwd &&
-      ls
+  
   - name: Print message
     ansible.builtin.debug:
       msg: Hello world
