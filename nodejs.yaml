@@ -10,11 +10,11 @@
       mode: '0755' 
   - name: Install nodejs and npm 
     apt:
-      pkg:
-        - nodejs
-        - npm
-        - curl
+      name: "{{ item }}"
       state: present
+    loop:
+      - nodejs
+      - npm
     become: yes
 
   - name: Copy the Artifacts
