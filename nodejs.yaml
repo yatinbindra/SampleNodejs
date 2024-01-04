@@ -9,7 +9,7 @@
       state: directory
       mode: '0755' 
   - name: Update apt repo
-    apt : update_cache=yes force_apt_get=yes
+    apt : update_cache=yes 
 
   - name: Install nodejs and npm 
     apt:
