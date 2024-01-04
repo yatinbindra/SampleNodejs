@@ -1,10 +1,7 @@
 - name: My first play
   hosts: myhosts
   become: yes
- 
   tasks:
- 
-
   - name: Create Directory
     ansible.builtin.file:
       path: /home/yatin/www1
