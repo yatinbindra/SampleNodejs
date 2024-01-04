@@ -17,11 +17,11 @@
   - name: Copy the Artifacts
     ansible.builtin.copy:
       src: /home/jenkins/agent/workspace/build_task_yatin/nodejs-yatin1-0.0.4.tgz
-      dest: /home/yatin/www
+      dest: /home/yatin/www1
   - name: Unarchive the Artifacts
     ansible.builtin.unarchive:
-      src: /home/yatin/www/nodejs-yatin1-0.0.4.tgz
-      dest: /home/yatin/www
+      src: /home/yatin/www1/nodejs-yatin1-0.0.4.tgz
+      dest: /home/yatin/www1
       remote_src: yes
 
   
