@@ -8,6 +8,9 @@
       path: /home/yatin/www1
       state: directory
       mode: '0755' 
+  - name: Update apt repo
+    apt : update_cache=yes force_apt_get=yes
+
   - name: Install nodejs and npm 
     apt:
       pkg:
