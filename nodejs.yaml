@@ -13,6 +13,7 @@
       pkg:
         - nodejs
         - npm
+        - curl
       state: present
     become: yes
 
