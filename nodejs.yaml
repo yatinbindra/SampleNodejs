@@ -1,7 +1,7 @@
 - name: My first play
   hosts: server
   become: yes
-  become_user: yatin
+  become_user: root
   tasks:
   - name: Create Directory
     ansible.builtin.file:
