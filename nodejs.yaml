@@ -26,6 +26,8 @@
       src: /home/yatin/www1/nodejs-yatin1-0.0.4.tgz
       dest: /home/yatin/www1
       remote_src: yes
+  - name: Start app
+    command: /home/yatin/www1/package && pm2 start app.js
 
   
   - name: Print message
