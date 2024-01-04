@@ -1,7 +1,6 @@
 - name: My first play
   hosts: server
   become: yes
-  become_user: yatin
   tasks:
   - name: Create Directory
     ansible.builtin.file:
@@ -15,6 +14,7 @@
     loop:
       - nodejs
       - npm
+      - curl
     become: yes
 
   - name: Copy the Artifacts
