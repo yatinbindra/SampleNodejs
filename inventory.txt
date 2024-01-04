@@ -1,3 +1,3 @@
 [myhosts]
 10.0.0.77 ansible_user=yatin ansible_password=1234 
-connection: paramiko_ssh
+ansible_connection=paramiko
