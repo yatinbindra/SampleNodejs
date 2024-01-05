@@ -18,17 +18,17 @@
     become: yes
   - name: Copy the Artifacts
     ansible.builtin.copy:
-      src: /home/jenkins/agent/workspace/build_task_yatin/nodejs-yatin1-0.0.4.tgz
+      src: /home/jenkins/agent/workspace/build_task_yatin/nodejs-yatin1-0.0.5.tgz
       dest: /home/yatin/www1
   - name: Unarchive the Artifacts
     ansible.builtin.unarchive:
-      src: /home/yatin/www1/nodejs-yatin1-0.0.4.tgz
+      src: /home/yatin/www1/nodejs-yatin1-0.0.5.tgz
       dest: /home/yatin/www1
       remote_src: yes
   - name: Start app
     ansible.builtin.shell: |
       cd /home/yatin/www1/package && 
-      pm2 start app.js
+      pm2 reload all
   
   - name: Print message
     ansible.builtin.debug:
