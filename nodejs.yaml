@@ -25,11 +25,10 @@
       src: /home/yatin/www1/nodejs-yatin1-0.0.5.tgz
       dest: /home/yatin/www1
       remote_src: yes
+  - name: Change directory
+    ansible.builtin.shell: "cd /home/yatin/www1/package " 
   - name: Start app
-    ansible.builtin.shell: |
-      cd /home/yatin/www1/package && 
-      pm2 reload all
-  
+    ansible.builtin.shell: "pm2 reload all"
   - name: Print message
     ansible.builtin.debug:
       msg: Hello world
