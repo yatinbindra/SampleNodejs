@@ -1,12 +1,14 @@
 - name: My first play
   hosts: server
   become: yes
+
   tasks:
   - name: Create Directory
     ansible.builtin.file:
-      path: /home/yatin/www1
+      path: /home/yatin/www2
       state: directory
       mode: '0755' 
+    become_user: yatin
   - name: Install nodejs and npm 
     apt:
       name: "{{ item }}"
@@ -19,16 +21,16 @@
   - name: Copy the Artifacts
     ansible.builtin.copy:
       src: /home/jenkins/agent/workspace/build_task_yatin/nodejs-yatin1-0.0.5.tgz
-      dest: /home/yatin/www1
+      dest: /home/yatin/www2
   - name: Unarchive the Artifacts
     ansible.builtin.unarchive:
       src: /home/yatin/www1/nodejs-yatin1-0.0.5.tgz
-      dest: /home/yatin/www1
+      dest: /home/yatin/www2
       remote_src: yes
-  - name: Change directory
-    command: cd /home/yatin/www1/package 
   - name: Start app
     command: pm2 reload all
+    args:
+      chdir: /home/yatin/www2
   - name: Print message
     ansible.builtin.debug:
       msg: Hello world
