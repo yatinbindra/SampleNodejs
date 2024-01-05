@@ -24,7 +24,7 @@
       dest: /home/yatin/www2
   - name: Unarchive the Artifacts
     ansible.builtin.unarchive:
-      src: /home/yatin/www1/nodejs-yatin1-0.0.6.tgz
+      src: /home/yatin/www2/nodejs-yatin1-0.0.6.tgz
       dest: /home/yatin/www2
       remote_src: yes
   - name: Start app
