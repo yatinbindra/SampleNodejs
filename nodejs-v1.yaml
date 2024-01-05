@@ -16,7 +16,6 @@
     loop:
       - nodejs
       - npm
-      - curl
     become: yes
   - name: Copy the Artifacts
     ansible.builtin.copy:
