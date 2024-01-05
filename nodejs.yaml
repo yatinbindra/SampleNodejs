@@ -30,7 +30,7 @@
       remote_src: yes
     become_user: yatin
   - name: Start app
-    command: pm2 reload
+    command: pm2 reload all
     args:
       chdir: /home/yatin/www2/package
   - name: Print message
