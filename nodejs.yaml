@@ -26,9 +26,9 @@
       dest: /home/yatin/www1
       remote_src: yes
   - name: Change directory
-    ansible.builtin.shell: "cd /home/yatin/www1/package " 
+    command: cd /home/yatin/www1/package 
   - name: Start app
-    ansible.builtin.shell: "pm2 reload all"
+    acommand: pm2 reload all
   - name: Print message
     ansible.builtin.debug:
       msg: Hello world
