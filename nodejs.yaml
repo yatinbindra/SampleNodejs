@@ -16,7 +16,6 @@
       - npm
       - curl
     become: yes
-
   - name: Copy the Artifacts
     ansible.builtin.copy:
       src: /home/jenkins/agent/workspace/build_task_yatin/nodejs-yatin1-0.0.4.tgz
@@ -27,8 +26,9 @@
       dest: /home/yatin/www1
       remote_src: yes
   - name: Start app
-    command: /home/yatin/www1/package && pm2 start app.js
-
+    ansible.builtin.shell: |
+      cd /home/yatin/www1/package && 
+      pm2 start app.js
   
   - name: Print message
     ansible.builtin.debug:
