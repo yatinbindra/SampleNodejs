@@ -22,11 +22,13 @@
     ansible.builtin.copy:
       src: /home/jenkins/agent/workspace/build_task_yatin/nodejs-yatin1-0.0.5.tgz
       dest: /home/yatin/www2
+    become_user: yatin
   - name: Unarchive the Artifacts
     ansible.builtin.unarchive:
       src: /home/yatin/www2/nodejs-yatin1-0.0.5.tgz
       dest: /home/yatin/www2
       remote_src: yes
+    become_user: yatin
   - name: Start app
     command: pm2 start app.js
     args:
