@@ -28,7 +28,7 @@
   - name: Change directory
     command: cd /home/yatin/www1/package 
   - name: Start app
-    acommand: pm2 reload all
+    command: pm2 reload all
   - name: Print message
     ansible.builtin.debug:
       msg: Hello world
