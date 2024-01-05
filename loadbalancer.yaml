@@ -8,6 +8,8 @@
       pkg:
         - nginx
     become: yes
+  - name: Start nginx service 
+    command: systemctl start nginx
   - name: Copy the Artifacts
     ansible.builtin.copy:
       src: /home/jenkins/agent/workspace/build_task_yatin/load-balancer.conf
