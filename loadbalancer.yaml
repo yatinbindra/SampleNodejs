@@ -1,0 +1,21 @@
+- name: loadbalancer
+  hosts: loadbalancer
+  become: yes
+
+  tasks:
+  - name: Install nginx 
+    apt:
+      pkg:
+        - nginx
+    become: yes
+  - name: Copy the Artifacts
+    ansible.builtin.copy:
+      src: /home/jenkins/agent/workspace/build_task_yatin/load-balancer.conf
+      dest: /etc/nginx/conf.d
+    become_user: yatin
+  
+  - name: Restart nginx service 
+    command: systemctl restart nginx
+  - name: Print message
+    ansible.builtin.debug:
+      msg: Hello world

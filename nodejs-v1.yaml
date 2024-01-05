@@ -1,4 +1,4 @@
-- name: My first play
+- name: To deploy Version 1
   hosts: server
   become: yes
 
@@ -30,7 +30,7 @@
       remote_src: yes
     become_user: yatin
   - name: Start app
-    command: pm2 reload all
+    command: pm2 start app.js
     args:
       chdir: /home/yatin/www2/package
   - name: Print message

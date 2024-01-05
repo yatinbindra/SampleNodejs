@@ -2,4 +2,11 @@
 10.0.0.77 ansible_ssh_user=yatin ansible_private_key_file=/home/jenkins/agent/workspace/build_task_yatin/VM-key.pem ansible_become=true ansible_become_method=sudo ansible_become_pass='1234' ansible_ssh_common_args='-o StrictHostKeyChecking=no' 
 10.0.0.48 ansible_ssh_user=yatin ansible_private_key_file=/home/jenkins/agent/workspace/build_task_yatin/VM-key.pem ansible_become=true ansible_become_method=sudo ansible_become_pass='notallowed12' ansible_ssh_common_args='-o StrictHostKeyChecking=no' 
 
+[vm1]
+10.0.0.77 ansible_ssh_user=yatin ansible_private_key_file=/home/jenkins/agent/workspace/build_task_yatin/VM-key.pem ansible_become=true ansible_become_method=sudo ansible_become_pass='1234' ansible_ssh_common_args='-o StrictHostKeyChecking=no' 
 
+[vm2]
+10.0.0.48 ansible_ssh_user=yatin ansible_private_key_file=/home/jenkins/agent/workspace/build_task_yatin/VM-key.pem ansible_become=true ansible_become_method=sudo ansible_become_pass='notallowed12' ansible_ssh_common_args='-o StrictHostKeyChecking=no' 
+
+[loadbalancer]
+10.0.0.35 ansible_ssh_user=yatin ansible_private_key_file=/home/jenkins/agent/workspace/build_task_yatin/VM-key.pem ansible_become=true ansible_become_method=sudo ansible_become_pass='1234' ansible_ssh_common_args='-o StrictHostKeyChecking=no' 
