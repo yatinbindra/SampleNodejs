@@ -28,10 +28,14 @@
       dest: /home/yatin/www2
       remote_src: yes
     become_user: yatin
-  - name: Start app
-    command: pm2 start app.js
-    args:
-      chdir: /home/yatin/www2/package
+  - name: Copy the Service file
+    ansible.builtin.copy:
+      src: /home/jenkins/agent/workspace/build_task_yatin/nodejs.service
+      dest: /etc/systemd/system
+  - name: Enable app service
+    command: systemctl enable nodejs
+  - name: Start the app service
+    command: systemctl start nodejs
   - name: Print message
     ansible.builtin.debug:
       msg: Hello world
