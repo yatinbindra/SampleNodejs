@@ -3,6 +3,14 @@
   become: yes
 
   tasks:
+  - name: update nodejs and npm 
+    apt:
+      name: "{{ item }}"
+      state: present
+    loop:
+      - nodejs
+      - npm
+    become: yes
   - name: Copy the Artifacts
     ansible.builtin.copy:
       src: /home/jenkins/agent/workspace/build_task_yatin/nodejs-yatin1-0.0.3.tgz
