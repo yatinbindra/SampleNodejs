@@ -5,7 +5,7 @@
   tasks:
   - name: Install nginx 
     apt:
-      pkg:
+      pkg:          
         - nginx
     become: yes
   - name: Start nginx service 
