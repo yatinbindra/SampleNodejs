@@ -1,0 +1,11 @@
+[Unit]
+Description= Unit file for Version2 application
+After=network.target
+
+[Service]
+
+ExecStart=/usr/bin/node /home/yatin/www2/package/app.js
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
