@@ -1,5 +1,5 @@
 [Unit]
-Description= Unit file for Version2 application
+Description= Service file for Nodejs application
 After=network.target
 
 [Service]
