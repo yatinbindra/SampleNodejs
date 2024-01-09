@@ -6,7 +6,7 @@
   - name: update nodejs and npm 
     apt:
       name: "{{ item }}"
-      state: present
+      state: latest   
     loop:
       - nodejs
       - npm
@@ -17,7 +17,7 @@
       dest: /home/yatin/www2
     become_user: yatin
   - name: Unarchive the Artifacts
-    command: "tar -xvf /home/yatin/www2/nodejs-yatin1-0.0.3.tgz -C /home/yatin/www2 "
+    command: "tar -xvf /home/yatin/www2/nodejs-yatin1-0.0.3.tgz -C /home/yatin/www2 "  
     become_user: yatin
   - name: Copy the Service file
     ansible.builtin.copy:
@@ -26,7 +26,7 @@
   - name: Enable app service
     command: systemctl enable nodejs
   - name: Start the app service
-    command: systemctl restart nodejs
+    command: systemctl restart nodejs  
   - name: Print message
     ansible.builtin.debug:
       msg: Hello world
